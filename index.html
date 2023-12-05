@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>My app - vue</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vue.png?20170311074507" alt="Vue.js" width="30" height="30" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#messages">vue-intro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#directive">directives</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#v-bind">v-bind</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#v-if">v-if</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#v-show">v-show</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#v-for">v-for</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#v-on">v-on</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#vue-methods">vue-methods</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#vue-modifiers">vue-modifiers</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#vue-modifiers">vue-modifiers-images</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#vue-form">vue-form</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#v-model">v-model</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#vue-css-binding">vue-css-binding</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#vue-computed-properties">vue-computed-properties</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" aria-current="page" href="#vue-watchers">vue-watchers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mt-5 p-3 container col-12 col-sm-11">
+        <div class="row">
+            <!-- vue intro -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="messages">
+                    <div class="front d-flex align-items-center justify-content-center">
+                        <h2>VUE INTRO</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>VUE INTRO</h2>
+                        <span>{{ messageTexto }}</span>
+                        <span>{{'Random number: ' + Math.ceil(Math.random()*6) }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- directives -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="directive">
+                    <div class="front d-flex align-items-center justify-content-center">
+                        <h2>DIRECTIVES</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>DIRECTIVES</h2>
+                        <div v-bind:class="vueClass">Mi primer aplicacion usando Vue.js</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v-bind -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="v-bind">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>V-BIND</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>V-BIND</h2>
+                        <img v-bind:src="url" v-bind:height="height">
+                        <div v-bind:style="{ 'font-size': size + 'px' }">Text example</div>
+                        <div :style="{ backgroundColor: isImportant ? 'lightgreen' : 'lightgray' }">Condicional de background color</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v-if -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="v-if">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>V-IF</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>V-IF</h2>
+                        <span>Numero generado: {{ typewriterCount }}</span>
+                        <p v-if="typewriterCount > 0">Mayor a 0</p>
+                        <p v-else-if="typewriterCount < 0">Menor a 0</p>
+                        <p v-else>Igual a 0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v-show -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="v-show">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>V-SHOW</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>V-SHOW</h2>
+                        <div v-show="showDiv">Esta etiqueta se puede ocultar</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v-for -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="v-for">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>V-FOR</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center overflow-y-auto h-100 overflow-x-hidden">
+                        <h2>V-FOR</h2>
+                        <ul>
+                            <li v-for="x in fruits">{{ x }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v-on -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="v-on">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>V-ON</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>V-ON</h2>
+                        <p>Contador: {{ count }}</p>
+                        <button v-on:click="count++" class="btn btn-light btn-sm rounded-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M11.75 4.5a.75.75 0 0 1 .75.75V11h5.75a.75.75 0 0 1 0 1.5H12.5v5.75a.75.75 0 0 1-1.5 0V12.5H5.25a.75.75 0 0 1 0-1.5H11V5.25a.75.75 0 0 1 .75-.75Z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- vue methods -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="vue-methods">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>VUE METHODS</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>VUE METHODS</h2>
+                        <p>Contador: {{ count }}</p>
+                        <div class="d-grid gap-2 w-100">
+                            <button v-on:click="addMoose(1)" class="btn btn-primary" type="button">Add +1</button>
+                            <button v-on:click="addMoose(5)" class="btn btn-primary" type="button">Add +5</button>
+                            <button v-on:click="removeMoose(1)" class="btn btn-primary" type="button">Remove -1</button>
+                            <button v-on:click="removeMoose(5)" class="btn btn-primary" type="button">Remove -5</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- vue modifiers -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="vue-modifiers">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>VUE MODIFIERS</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>VUE MODIFIERS</h2>
+                        <div v-on:click.left.prevent="changeColor" v-bind:style="{backgroundColor:'hsl('+bgColor+',80%,80%)'}">
+                            <p class="px-3">Presionar click izquierdo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="vue-modifiers-image">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>VUE MODIFIERS IMAGE</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>VUE MODIFIERS IMAGE</h2>
+                        <img v-on:click.left.prevent="changeImg" v-bind:src="imgUrl" height="150" width="auto">
+                    </div>
+                </div>
+            </div>
+
+            <!-- vue form -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="vue-form">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>VUE FORM</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>VUE FORM</h2>
+                        <form v-on:submit.prevent="addItem">
+                            <input type="text" placeholder="Fruta" class="form-control mb-1" required v-model="itemName">
+                            <input type="number" placeholder="Cantidad" class="form-control mb-1" v-model="itemNumber">
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success">Añadir</button>
+                            </div>
+                        </form>
+                        <div class="w-100 overflow-y-auto overflow-x-hidden h-100 mt-2 over">
+                            <ul>
+                                <li v-for="item in shoppingList">{{item.name}}, {{item.number}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v-model -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="v-model">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>V-MODEL</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center overflow-y-auto h-100 overflow-x-hidden">
+                        <h2>V-MODEL</h2>
+                        <form v-on:submit.prevent="addItem">
+                            <input type="text" class="form-control mb-1" required v-model="itemName">
+                            <input type="number" class="form-control mb-1" v-model="itemNumber">
+                            <p>Important?
+                                <label>
+                                    <input type="checkbox" v-model="itemImportant">
+                                    {{ important }}
+                              </label>
+                            </p>
+                            <button type="submit" class="btn btn-success btn-sm mb-2">Añadir vehiculo</button>
+                        </form>
+                        <ul id="ulToFind" class="w-100">
+                            <li v-for="item in shoppingList"
+                                v-bind:class="{ impClass: item.important }"
+                                v-on:click="item.found=!item.found"
+                                v-show="!item.found">
+                                  {{ item.name }}, {{ item.number}}
+                            </li>
+                        </ul>
+                        <ul id="ulFound" class="w-100">
+                            <li v-for="item in shoppingList"
+                                v-bind:class="{ impClass: item.important }"
+                                v-on:click="item.found=!item.found"
+                                v-show="item.found">
+                                  {{ item.name }}, {{ item.number}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- vue css binding -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="vue-css-binding">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>VUE CSS BINDING</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>VUE CSS BINDING</h2>
+                        <div v-bind:class="[{ impClass: isImportant }, 'yelClass' ]">Box</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- vue computed properties -->
+            <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="vue-computed-properties">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>VUE COMPUTED PROPERTIES</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>VUE COMPUTED PROPERTIES</h2>
+                        <form>
+                            <p>
+                                El item es importante?
+                                <label>
+                                    <input type="checkbox" v-model="chbxVal"> 
+                                    {{ isImportant }}
+                                </label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+           <!-- vue watchers -->
+           <div class="cardBox col-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                <div class="card" id="vue-watchers">
+                    <div class="front  d-flex align-items-center justify-content-center">
+                        <h2>VUE WATCHERS</h2>
+                    </div>
+                    <div class="back d-flex flex-column align-items-center justify-content-center">
+                        <h2>VUE WATCHERS</h2>
+                        <label>
+                            <p>Ingrese una direccion de correo:</p>
+                            <input type="email" v-model="inpAddress">
+                        </label>
+                        <p v-bind:class="myClass"><code>{{ feedbackText }}</code></p> 
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <footer class="mt-5 p-3 text-center text-bg-dark">
+        &copy; Kelly Tatiana Angulo & Felipe Quenguan
+    </footer>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

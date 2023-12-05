@@ -1,0 +1,114 @@
+.pinkBG {
+    background-color: lightpink;
+}
+
+#v-model label, #v-model li {
+    padding: 5px;
+    border-radius: 5px;
+}
+#v-model label:hover, #v-model li:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+#v-model ul {
+    list-style-type: none;
+}
+#v-model li {
+    color: black;
+    margin: 2px;
+    background-color: rgb(211, 254, 211);
+}
+#v-model .impClass {
+    background-color: rgb(255, 202, 202);
+}
+#v-model #ulFound li {
+    text-decoration: line-through;
+    background-color: rgb(230,230,230);
+}
+#vue-css-binding .impClass {
+    font-weight: bolder;
+}
+#vue-watchers .back .valid {
+    color: green;
+}
+#vue-watchers .back .invalid {
+    color: red;
+}
+
+//cartas
+.cardBox {
+    font-size: 1.2em;
+    transition: all 0.3s ease 0s;
+    position: relative;
+}
+.cardBox:hover .card {
+    transform: rotateY(180deg);
+}
+.card {
+    background: #222;
+    cursor: default;
+    min-height: 320px;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease 0s;
+    width: 100%;
+    -webkit-animation: giro 1s 1;
+    animation: giro 1s 1;
+}
+.front, .back {
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    color: white;
+    display: block;
+    font-size: 1.2em;
+    height: 100%;
+    padding: 0.8em;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.back {
+    transform: rotateY( 180deg);
+}
+.front h2{
+    width: 100%;
+    background: white;
+    color: black;
+    font-weight: bold;
+}
+.back h2{
+    width: 100%;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+#v-for .back {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar,
+#v-for .back::-webkit-scrollbar,
+#vue-methods .back::-webkit-scrollbar,
+#vue-form .back .over::-webkit-scrollbar,
+#v-model .back::-webkit-scrollbar {
+    width: 12px;
+}
+  
+body::-webkit-scrollbar-track,
+#v-for .back::-webkit-scrollbar-track,
+#vue-methods .back::-webkit-scrollbar-track,
+#vue-form .back .over::-webkit-scrollbar-track,
+#v-model .back::-webkit-scrollbar-track {
+    background: #212529;
+}
+  
+body::-webkit-scrollbar-thumb,
+#v-for .back::-webkit-scrollbar-thumb,
+#vue-methods .back::-webkit-scrollbar-thumb,
+#vue-form .back .over::-webkit-scrollbar-thumb,
+#v-model .back::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+    border: 3px solid #212529;
+}
